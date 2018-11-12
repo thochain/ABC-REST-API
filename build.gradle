@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.17.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+group 'com.thochain'
+version '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:1.5.17.RELEASE',
+            'io.springfox:springfox-swagger2:2.9.2',
+            'io.springfox:springfox-swagger-ui:2.9.2',
+            'org.projectlombok:lombok:1.16.22',
+            'org.web3j:quorum:0.8.0'
+    testCompile 'junit:junit:4.12',
+            'org.springframework.boot:spring-boot-starter-test:1.5.17.RELEASE'
+}
