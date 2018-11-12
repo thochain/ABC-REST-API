@@ -69,6 +69,12 @@ public class Controller {
         return ContractService.tokenCreationCap(contractAddress);
     }
 
+    @ApiOperation("Get total ether raised")
+    @RequestMapping(value = "/{contractAddress}/totalEtherHasBeenReceived", method = RequestMethod.GET)
+    long totalEtherHasBeenReceived(@PathVariable String contractAddress) throws Exception {
+        return ContractService.totalEtherHasBeenReceived(contractAddress);
+    }
+
     @Data
     static class ContractSpecification {
         private final BigInteger initialAmount;

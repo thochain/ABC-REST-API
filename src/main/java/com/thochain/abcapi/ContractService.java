@@ -139,6 +139,15 @@ public class ContractService {
         }
     }
 
+    public long totalEtherHasBeenReceived(String contractAddress) throws Exception {
+        ABCTokenContract token = load(contractAddress);
+        try {
+            return extractLongValue(token.totalEtherHasBeenReceived().send());
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     /**
      *
      * @param contractAddress
